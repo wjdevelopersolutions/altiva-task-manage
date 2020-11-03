@@ -1,14 +1,15 @@
-mixin navbar()
+mixin navbar(proyectos = [])
   nav.pcoded-navbar.menu-light
     .navbar-wrapper
       .navbar-content.scroll-div
         div
-          .main-menu-header
+          .main-menu-header.my-3
             img.img-radius(src='/images/user/avatar-2.jpg' alt='User-Profile-Image')
             .user-details
               #more-details
-                | UX Designer 
-                i.fa.fa-caret-down
+                | Ejecutivo de negocios 
+                br
+                span Asociacion Popular
           #nav-user-link.collapse
             ul.list-unstyled
               li.list-group-item
@@ -25,31 +26,36 @@ mixin navbar()
                   | Logout
         ul.nav.pcoded-inner-navbar
           li.nav-item.pcoded-menu-caption
-            label Navigation
+            label Menú
           li.nav-item
-            a.nav-link(href='index.html')
+            a.nav-link(href='/')
               span.pcoded-micon
                 i.feather.icon-home
-              span.pcoded-mtext Dashboard
-          li.nav-item.pcoded-hasmenu
-            a.nav-link(href='#!')
-              span.pcoded-micon
-                i.feather.icon-layout
-              span.pcoded-mtext Page layouts
-            ul.pcoded-submenu
-              li
-                a(href='layout-vertical.html' target='_blank') Vertical
-              li
-                a(href='layout-horizontal.html' target='_blank') Horizontal
+              span.pcoded-mtext Inicio
           li.nav-item.pcoded-menu-caption
-            label.text-capitalize proyectos
-          
-        .card.text-center
-          .card-block
-            button.close(type='button' data-dismiss='alert' aria-hidden='true') &times;
-            i.feather.icon-briefcase.f-40
-            h6.mt-3 Sin proyectos
-            p Empieza creando un proyecto personal
-            a.btn.btn-primary.btn-sm.text-white.m-0(href='https://1.envato.market/qG0m5' target='_blank') Crear proyecto
+            label.text-capitalize Proyectos
+          if (proyectos.length > 0)
+            li.nav-item.pcoded-hasmenu
+              a.nav-link(href='#!')
+                span.pcoded-micon
+                  i.feather.icon-folder
+                span.pcoded-mtext Mis proyectos
+              ul.pcoded-submenu
+                each proyecto in proyectos
+                  li
+                    a(href=`/proyecto/${proyecto.url}`)= proyecto.nombre
+            li.nav-item
+              a.nav-link(href="/nuevo-proyecto") 
+                span.pcoded-micon
+                  i.feather.icon-plus
+                span.pcoded-mtext Agregar un proyecto
+          else  
+            .card.text-center
+              .card-block
+                button.close(type='button' data-dismiss='alert' aria-hidden='true') &times;
+                i.feather.icon-briefcase.f-40
+                h6.mt-3 Sin proyectos
+                p Empieza creando un proyecto personal
+                a.btn.btn-primary.btn-sm.text-white.m-0(href='/nuevo-proyecto') Crear proyecto
 
     

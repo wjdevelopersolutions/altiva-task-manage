@@ -5,9 +5,18 @@
 
 - Nodejs
 - Express
-- Babel
+- Express validator
 - Nodemon
 - Colors
 - MySQL
 - Sequelize
 - Pug
+- toastify-js
+- Slug
+- Nanoid
+- @babel/node
+- babel-loader 
+- @babel/core 
+- @babel/preset-env 
+- webpack
+- Concurrently

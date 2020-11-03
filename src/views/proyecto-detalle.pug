@@ -1,0 +1,18 @@
+extends ./layout
+
+block body
+
+  h5.text-capitalize= props.title
+
+  pre.mt-3= var_dump(props.proyecto)
+
+  .container
+    .row
+      .col-md-8
+        a.btn.btn-success.has-ripple(href=`/proyecto/editar/${props.proyecto.id}`)
+          i.feather.icon-refresh-ccw.mr-2 &nbsp; Actualizar
+          span.ripple.ripple-animate(style="height: 109.828px; width: 109.828px; animation-duration: 0.7s; animation-timing-function: linear; background: rgb(255, 255, 255); opacity: 0.4; top: -36.281px; left: 9.094px;")
+        a.btn.btn-danger.has-ripple.mx-3(href=``)
+          i.feather.icon-trash.mr-2 &nbsp; Eliminar
+          span.ripple.ripple-animate(style="height: 109.828px; width: 109.828px; animation-duration: 0.7s; animation-timing-function: linear; background: rgb(255, 255, 255); opacity: 0.4; top: -36.281px; left: 9.094px;")
+
