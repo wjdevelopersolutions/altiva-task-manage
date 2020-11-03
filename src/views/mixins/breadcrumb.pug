@@ -1,0 +1,14 @@
+mixin breadcrumb(props)
+  .page-header
+    .page-block
+      .row.align-items-center
+        .col-md-12
+          .page-header-title
+            h5.m-b-10= props.title
+          ul.breadcrumb
+            li.breadcrumb-item
+              a(href='index.html')
+                i.feather.icon-home
+            li.breadcrumb-item
+              a(href='#!')= props.title
+  

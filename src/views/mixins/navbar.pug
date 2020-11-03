@@ -1,0 +1,55 @@
+mixin navbar()
+  nav.pcoded-navbar.menu-light
+    .navbar-wrapper
+      .navbar-content.scroll-div
+        div
+          .main-menu-header
+            img.img-radius(src='/images/user/avatar-2.jpg' alt='User-Profile-Image')
+            .user-details
+              #more-details
+                | UX Designer 
+                i.fa.fa-caret-down
+          #nav-user-link.collapse
+            ul.list-unstyled
+              li.list-group-item
+                a(href='user-profile.html')
+                  i.feather.icon-user.m-r-5
+                  | View Profile
+              li.list-group-item
+                a(href='#!')
+                  i.feather.icon-settings.m-r-5
+                  | Settings
+              li.list-group-item
+                a(href='auth-normal-sign-in.html')
+                  i.feather.icon-log-out.m-r-5
+                  | Logout
+        ul.nav.pcoded-inner-navbar
+          li.nav-item.pcoded-menu-caption
+            label Navigation
+          li.nav-item
+            a.nav-link(href='index.html')
+              span.pcoded-micon
+                i.feather.icon-home
+              span.pcoded-mtext Dashboard
+          li.nav-item.pcoded-hasmenu
+            a.nav-link(href='#!')
+              span.pcoded-micon
+                i.feather.icon-layout
+              span.pcoded-mtext Page layouts
+            ul.pcoded-submenu
+              li
+                a(href='layout-vertical.html' target='_blank') Vertical
+              li
+                a(href='layout-horizontal.html' target='_blank') Horizontal
+          li.nav-item.pcoded-menu-caption
+            label.text-capitalize proyectos
+          
+        .card.text-center
+          .card-block
+            button.close(type='button' data-dismiss='alert' aria-hidden='true') &times;
+            i.feather.icon-briefcase.f-40
+            h6.mt-3 Sin proyectos
+            p Empieza creando un proyecto personal
+            a.btn.btn-primary.btn-sm.text-white.m-0(href='https://1.envato.market/qG0m5' target='_blank') Crear proyecto
+
+    

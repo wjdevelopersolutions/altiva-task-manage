@@ -1,0 +1,49 @@
+include ./mixins/loader
+include ./mixins/navbar
+include ./mixins/top-header
+include ./mixins/bottom-header
+include ./mixins/breadcrumb
+
+
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui")
+
+    link(rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png")
+    link(rel="manifest" href="/images/favicon/site.webmanifest")
+
+    link(rel="stylesheet", href="/css/style.css")
+
+    title altiva | #{props.title}
+  body(class="")
+
+    //- [ Pre-loader ] start
+    +loader
+    //- [ navigation menu ] start
+    +navbar
+    //- [ Header ] start
+    header(class="navbar pcoded-header navbar-expand-lg navbar-light header-blue")
+      +topHeader
+      +bottomHeader
+    //- [ Main Content ] start
+    .pcoded-main-container
+      .pcoded-content
+        //- [ breadcrumb ] start 
+        +breadcrumb(props)
+        //- [ Main Content ] start
+        .row
+          .col-sm-12
+            .card
+              .card-header
+                block body
+
+  script(src="/js/vendor-all.min.js")
+  script(src="/js/plugins/bootstrap.min.js")
+  //- script(src="/js/ripple.js")
+  script(src="/js/pcoded.min.js")
