@@ -125,4 +125,16 @@ export const postearActualizarProyecto = async (req=request, res=response, next)
   console.log({ msg: 'Se ha modificado satisfactoriamente el proyecto', proyecto: proyectoUdated.dataValues});
   
   res.redirect('/');
-}
+};
+
+export const eliminarProyecto = async (req, res, next) =>
+{
+      const { urlProyecto } = req.query;
+      const result = await Proyectos.destroy({
+          where: { url: urlProyecto }
+      });
+      if(!result) {
+        return next();
+      }
+      res.send('El proyecto se ha eliminado con éxito!');
+};

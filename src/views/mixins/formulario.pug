@@ -3,7 +3,7 @@ mixin formulario(proyecto = {})
     .input-group
       .input-group-prepend
         span.input-group-text Nombre del proyecto
-      textarea.form-control(onKeyDown="pulsar(event)" arial-label="With textarea" name="nombre" placeholder="Escribe el nombre de tu proyecto aqui")= (proyecto.nombre) ? proyecto.nombre : ''
+      textarea.form-control(id="proyecto-form" arial-label="With textarea" name="nombre" placeholder="Escribe el nombre de tu proyecto aqui")= (proyecto.nombre) ? proyecto.nombre : ''
     .input-group.mt-3
       button( class=`${ (proyecto.nombre) ? 'btn btn-success text-capitalize' : 'btn btn-primary text-capitalize' }` type="submit")
         i(class=` ${(proyecto.nombre) ? 'feather icon-save mr-2' : 'feather icon-plus mr-2' }`)

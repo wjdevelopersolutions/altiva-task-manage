@@ -8,13 +8,15 @@ import express from 'express';
 import { body } from 'express-validator/check';
 const router = express.Router();
 
-import { 
+//noinspection JSUnresolvedVariable
+import {
   obtenerPaginaDeInicio,
   obtenerNuevoProyecto,
   postearNuevoProyecto,
   obtenerProyectoDetalle,
   obtenerProyectoDetalleEditar,
-  postearActualizarProyecto
+  postearActualizarProyecto,
+  eliminarProyecto
 } from '../controllers/index';
 
 export const rutasRaiz = () =>
@@ -29,6 +31,7 @@ export const rutasRaiz = () =>
     postearNuevoProyecto
   );
   router.get('/proyecto/:url', obtenerProyectoDetalle);
+  router.delete('/proyecto/:url', eliminarProyecto);
   router.get('/proyecto/editar/:id', obtenerProyectoDetalleEditar);
   router.post('/nuevo-proyecto/:id', 
     [
@@ -38,4 +41,4 @@ export const rutasRaiz = () =>
   );
 
   return router;
-}
+};
